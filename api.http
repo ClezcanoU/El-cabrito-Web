@@ -1,0 +1,21 @@
+### registro de cliente
+POST http://localhost:1234/register
+Content-Type: application/json
+
+{
+  "userName": "Javier",
+  "direccion": "cra 201 n 182 - 01",
+  "tel1": "3135689456",
+  "tel2": "3018585785",
+  "email": "javier123@gmail.com",
+  "password": "javuier123"
+}
+
+### login cliente
+POST http://localhost:1234/login
+Content-Type: application/json
+
+{
+  "userName": "Javier",
+  "password": "javuier123"
+}

@@ -1,0 +1,21 @@
+#root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container{
+    margin: 0;
+    width: 300px;
+    font-size: large;
+}
+
+.form-register{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label{
+    display: none;
+}
