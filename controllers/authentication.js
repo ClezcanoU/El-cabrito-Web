@@ -1,6 +1,7 @@
 import { model } from "../models/mysql/authentication.js";
 import { validateLogin, validateRegister } from "../schemas/users.js";
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 
 export class auth {
@@ -21,6 +22,9 @@ export class auth {
 
                 if (validatePassword) {
                     // Contraseña válida
+                    const user = validacion.data.userName;
+                    const token = jwt.sign(user, "secreto", { expiresIn: "1h" });
+                    res.cookie("jwt", token, { httpOnly: true });
                     return res.status(200).json({ message: 'Inicio de sesión exitoso' });
                 }
             }

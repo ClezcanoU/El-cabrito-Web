@@ -2,10 +2,13 @@ import express, { json } from "express"
 import { registerRouter } from "./routes/register.js"
 import { authRouter } from "./routes/login.js"
 import { corsMiddleware } from "./middlewares/cors.js"
+import cookieParser from "cookie-parser"
 
 const app = express()
+
 app.use(json())
-//app.use(corsMiddleware())
+app.use(cookieParser())
+app.use(corsMiddleware())
 app.disable('x-powered-by')
 
 app.use('/login', authRouter)
